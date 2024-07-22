@@ -17,7 +17,7 @@ export function loadLibraryTiles(
     let html = '';
     if (userViews.length) {
         html += '<h2 class="sectionTitle sectionTitle-cards padded-left">' + globalize.translate('HeaderMyMedia') + '</h2>';
-        if (enableOverflow) {
+        if (!enableOverflow) {
             html += '<div is="emby-scroller" class="padded-top-focusscale padded-bottom-focusscale" data-centerfocus="true">';
             html += '<div is="emby-itemscontainer" class="itemsContainer scrollSlider focuscontainer-x">';
         } else {
@@ -26,8 +26,8 @@ export function loadLibraryTiles(
 
         html += cardBuilder.getCardsHtml({
             items: userViews,
-            shape: getBackdropShape(enableOverflow),
-            showTitle: true,
+            shape: getBackdropShape(!enableOverflow),
+            showTitle: false,
             centerText: true,
             overlayText: false,
             lazy: true,

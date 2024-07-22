@@ -8,11 +8,15 @@
                 <input is="emby-input" type="text" id="txtManualName" required="required" label="${LabelUser}" autocomplete="username" autocapitalize="off" />
             </div>
 
-            <div class="inputContainer">
-                <input is="emby-input" id="txtManualPassword" type="password" label="${LabelPassword}" autocomplete="current-password" />
+            <div class="inputContainer" style="display: none;">
+                <input is="emby-input" id="txtManualPassword" type="password" label="${LabelPassword}" autocomplete="current-password"  />
             </div>
-
-            <label class="checkboxContainer">
+            <div align="center">
+                <p style="font-size: medium;">
+                    تسجيل اسمك للمرة الأولى فقط من اجل الوصول لجميع مميزات الاستراحة والحصول على تجربة افضل
+                </p>
+            </div>
+            <label class="checkboxContainer" style="display: none;">
                 <input is="emby-checkbox" type="checkbox" class="chkRememberLogin" checked />
                 <span>${RememberMe}</span>
             </label>
@@ -27,6 +31,7 @@
                 </button>
             </div>
         </form>
+      
 
         <div class="visualLoginForm" style="text-align: center;">
             <h1 style="margin-top:1em;">${HeaderPleaseSignIn}</h1>
@@ -38,15 +43,15 @@
                 <span>${ButtonManualLogin}</span>
             </button>
 
-            <button is="emby-button" type="button" class="raised cancel block btnQuick hide">
+            <button is="emby-button" type="button" class="raised cancel block btnQuick hide" style="display: none;">
                 <span>${ButtonUseQuickConnect}</span>
             </button>
 
-            <button is="emby-button" type="button" class="raised cancel block btnForgotPassword">
+            <button is="emby-button" type="button" class="raised cancel block btnForgotPassword" style="display: none;">
                 <span>${ButtonForgotPassword}</span>
             </button>
 
-            <button is="emby-button" type="button" class="raised block btnSelectServer">
+            <button is="emby-button" type="button" class="raised block btnSelectServer" >
                 <span>${ButtonChangeServer}</span>
             </button>
 

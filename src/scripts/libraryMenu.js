@@ -728,7 +728,7 @@ function setDefaultTitle () {
         pageTitleElement.innerHTML = '';
     }
 
-    document.title = 'Jellyfin';
+    document.title = 'Media';
 }
 
 function setTitle (title) {
@@ -754,7 +754,7 @@ function setTitle (title) {
         pageTitleElement.innerText = html || '';
     }
 
-    document.title = title || 'Jellyfin';
+    document.title = title || 'Media';
 }
 
 function setTransparentMenu (transparent) {

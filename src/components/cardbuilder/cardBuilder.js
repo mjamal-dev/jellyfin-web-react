@@ -204,7 +204,7 @@ function buildCardsHtmlInternal(items, options) {
                 }
                 html += '<' + sectionTitleTagName + ' class="sectionTitle">' + newIndexValue + '</' + sectionTitleTagName + '>';
                 if (isVertical) {
-                    html += '<div class="itemsContainer vertical-wrap">';
+                    html += '<div class="itemsContainer vertical-wrap" style="height: 700px;">';
                 }
                 currentIndexValue = newIndexValue;
                 hasOpenSection = true;
