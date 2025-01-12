@@ -4,6 +4,9 @@ jellyfin-web
 web
 node_modules
 
+# test coverage
+coverage
+
 # config
 config.json
 
@@ -11,12 +14,6 @@ config.json
 .idea
 .vs
 
-# log
-yarn-error.log
-
 # vim
 *.sw?
 
-# build artifacts
-fedora/jellyfin-web-*.src.rpm
-fedora/jellyfin-web-*.tar.gz
