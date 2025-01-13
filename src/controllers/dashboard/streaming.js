@@ -4,6 +4,7 @@ import Dashboard from '../../utils/dashboard';
 
 function loadPage(page, config) {
     $('#txtRemoteClientBitrateLimit', page).val(config.RemoteClientBitrateLimit / 1e6 || '');
+    $('#txtRemoteClientDownloadLimit', page).val(config.RemoteClientDownloadLimit / 1e6 || '');
     loading.hide();
 }
 
@@ -12,6 +13,7 @@ function onSubmit() {
     const form = this;
     ApiClient.getServerConfiguration().then(function (config) {
         config.RemoteClientBitrateLimit = parseInt(1e6 * parseFloat($('#txtRemoteClientBitrateLimit', form).val() || '0'), 10);
+        config.RemoteClientDownloadLimit = parseInt(1e6 * parseFloat($('#txtRemoteClientDownloadLimit', form).val() || '0'), 10);
         ApiClient.updateServerConfiguration(config).then(Dashboard.processServerConfigurationUpdateResult);
     });
 
