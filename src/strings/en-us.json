@@ -855,6 +855,8 @@
     "LabelReleaseDate": "Release date",
     "LabelRemoteClientBitrateLimit": "Internet streaming bitrate limit (Mbps)",
     "LabelRemoteClientBitrateLimitHelp": "An optional per-stream bitrate limit for all out of network devices. This is useful to prevent devices from requesting a higher bitrate than your internet connection can handle. This may result in increased CPU load on your server in order to transcode videos on the fly to a lower bitrate.",
+    "LabelRemoteClientDownloadLimit": "Internet downloading limit (MBps)",
+    "LabelRemoteClientDownloadLimitHelp": "A download limit for all network devices. This is useful to prevent devices from downloading at a higher bandwidth than your internet connection can handle.",
     "LabelRepository": "Repository",
     "LabelRepositoryName": "Repository Name",
     "LabelRepositoryNameHelp": "A custom name to distinguish this repository from any others added to your server.",
