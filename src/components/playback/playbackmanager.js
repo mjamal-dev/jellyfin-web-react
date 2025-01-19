@@ -2582,6 +2582,25 @@ export class PlaybackManager {
             }
 
             const apiClient = ServerConnections.getApiClient(item.ServerId);
+
+            // If the user has selected an external player, launch it
+            const selectedPlayer = userSettings.get('externalplayerpreference');
+            if (selectedPlayer === 'vlc') {
+                Promise.all([apiClient.getPlaybackInfo(item.Id), apiClient.accessToken()]).then(([playbackInfo, accessToken]) => {
+                    const url = apiClient.getUrl('Videos/' + item.Id + '/master.m3u8', { 'mediaSourceId': playbackInfo.MediaSources[0].Id, 'api_key': accessToken });
+                    const intent = `intent:${url}#Intent;package=org.videolan.vlc;end;`;
+                    window.location.href = intent;
+                });
+                return;
+            } else if (selectedPlayer === 'mxplayer') {
+                Promise.all([apiClient.getPlaybackInfo(item.Id), apiClient.accessToken()]).then(([playbackInfo, accessToken]) => {
+                    const url = apiClient.getUrl('Videos/' + item.Id + '/master.m3u8', { 'mediaSourceId': playbackInfo.MediaSources[0].Id, 'api_key': accessToken });
+                    const intent = `intent:${url}#Intent;package=com.mxtech.videoplayer.ad;S.title=${playbackInfo.MediaSources[0].Name};end;`;
+                    window.location.href = intent;
+                });
+                return;
+            }
+
             let mediaSourceId;
 
             const isLiveTv = [BaseItemKind.TvChannel, BaseItemKind.LiveTvChannel].includes(item.Type);

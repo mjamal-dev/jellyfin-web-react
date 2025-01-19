@@ -11,6 +11,10 @@ import ServerConnections from './ServerConnections';
 import toast from './toast/toast';
 import * as userSettings from '../scripts/settings/userSettings';
 import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models/base-item-kind';
+import dialogHelper from './dialogHelper/dialogHelper';
+import template from './externalPlayerSettings/externalPlayerSettings.template.html';
+import layoutManager from '../components/layoutManager';
+import externalPlayerSettings from './externalPlayerSettings/externalPlayerSettings';
 
 function getDeleteLabel(type) {
     switch (type) {
@@ -193,6 +197,11 @@ export async function getCommands(options) {
                 icon: 'content_copy'
             });
         }
+        commands.push({
+            name: globalize.translate('changeExternalPlayer'),
+            id: 'changeExternalPlayer',
+            icon: 'display_settings'
+        });
     }
 
     if (item.CanDelete && options.deleteItem !== false) {
@@ -464,6 +473,10 @@ function executeCommand(item, id, options) {
                     prompt(globalize.translate('CopyStreamURL'), downloadHref);
                 });
                 getResolveFunction(resolve, id)();
+                break;
+            }
+            case 'changeExternalPlayer': {
+                externalPlayerSettings.show();
                 break;
             }
             case 'editsubtitles':

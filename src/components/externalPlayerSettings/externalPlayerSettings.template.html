@@ -1,0 +1,18 @@
+<div class="formDialogHeader">
+    <button is="paper-icon-button-light" class="btnCancel autoSize" title="${Previous}" tabindex="-1">
+        <span class="material-icons arrow_back" aria-hidden="true"></span>
+    </button>
+    <h3 class="formDialogHeaderTitle">
+        ${ExternalPlayerSettings}
+    </h3>
+</div>
+<div class="formDialogContent smoothScrollY">
+    <form class="dialogContentInner dialog-content-centered" style="padding-top:2em;">
+
+        <h3 class="checkboxListLabel">${LabelChooseExternalPlayer}</h3>
+        <label class="radio-label-block"><input type="radio" is="emby-radio" name="externalPlayer" value="vlc" class="chkSortOrder" /><span>VLC</span></label>
+        <label class="radio-label-block"><input type="radio" is="emby-radio" name="externalPlayer" value="mxplayer" class="chkSortOrder" /><span>Mx Player</span></label>
+        <label class="radio-label-block"><input type="radio" is="emby-radio" name="externalPlayer" value="default" class="chkSortOrder" /><span>${defaultPlayer}</span></label>
+        <br />
+    </form>
+</div>

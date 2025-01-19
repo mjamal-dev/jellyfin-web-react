@@ -1774,5 +1774,9 @@
     "AirPlay": "ايربلاي",
     "Author": "الكاتب",
     "Alternate": "بديل",
-    "AlternateDVD": "DVD بديل"
+    "AlternateDVD": "DVD بديل",
+    "changeExternalPlayer": "تغيير المشغل الخارجي",
+    "ExternalPlayerSettings": "إعدادات المشغل الخارجي",
+    "LabelChooseExternalPlayer": "اختر المشغل الخارجي",
+    "defaultPlayer": "المشغل الافتراضي"
 }
