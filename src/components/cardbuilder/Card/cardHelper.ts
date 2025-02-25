@@ -132,7 +132,7 @@ export function getAirTimeText(
                 date = datetime.parseISO8601Date(item.EndDate);
                 airTimeText += ' - ' + datetime.getDisplayTime(date);
             }
-        } catch (e) {
+        } catch {
             console.error('error parsing date: ' + item.StartDate);
         }
     }
@@ -323,7 +323,7 @@ function shouldShowMediaTitle(
 }
 
 function shouldShowExtraType(itemExtraType: NullableString) {
-    return itemExtraType && itemExtraType !== 'Unknown';
+    return !!(itemExtraType && itemExtraType !== 'Unknown');
 }
 
 function shouldShowSeriesYearOrYear(
@@ -351,7 +351,7 @@ function shouldShowPersonRoleOrType(
     showPersonRoleOrType: boolean | undefined,
     item: ItemDto
 ) {
-    return showPersonRoleOrType && (item as BaseItemPerson).Role;
+    return !!(showPersonRoleOrType && (item as BaseItemPerson).Role);
 }
 
 function shouldShowParentTitle(
@@ -521,7 +521,7 @@ function getPremiereDate(PremiereDate: string | null | undefined) {
                 datetime.parseISO8601Date(PremiereDate),
                 { weekday: 'long', month: 'long', day: 'numeric' }
             );
-        } catch (err) {
+        } catch {
             return '';
         }
     } else {
